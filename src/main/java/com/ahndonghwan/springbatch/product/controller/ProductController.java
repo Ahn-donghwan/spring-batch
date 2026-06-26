@@ -19,6 +19,7 @@ public class ProductController {
 
     /**
      * 1. 상품 생성
+     * 2. 상품 벌크 생성
      *
      */
 
@@ -27,5 +28,12 @@ public class ProductController {
             @Valid @RequestBody CreateProductReqVo vo
     ) {
         productService.createProduct(CreateProductReqDto.from(vo));
+    }
+
+    @PostMapping("/bulk/mock/1000")
+    public void createBulkMockProduct(
+            @Valid @RequestBody CreateProductReqVo vo
+    ) {
+        productService.createBulkMockProduct(CreateProductReqDto.from(vo));
     }
 }
