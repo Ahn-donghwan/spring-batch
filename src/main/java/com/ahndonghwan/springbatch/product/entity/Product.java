@@ -29,7 +29,7 @@ public class Product extends Timestamp {
     private Long price;
 
     @Column(nullable = false)
-    private Long stock = 0L;
+    private Long stock;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
