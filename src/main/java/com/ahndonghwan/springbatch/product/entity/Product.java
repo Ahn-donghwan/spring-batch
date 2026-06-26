@@ -1,12 +1,11 @@
 package com.ahndonghwan.springbatch.product.entity;
 
 import com.ahndonghwan.springbatch.common.Timestamp;
-import com.ahndonghwan.springbatch.product.entity.enums.Status;
+import com.ahndonghwan.springbatch.product.enums.Status;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Comment;
 
 @Entity
 @Getter

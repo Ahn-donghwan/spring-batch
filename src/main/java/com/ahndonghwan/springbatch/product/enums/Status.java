@@ -1,4 +1,4 @@
-package com.ahndonghwan.springbatch.product.entity.enums;
+package com.ahndonghwan.springbatch.product.enums;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
