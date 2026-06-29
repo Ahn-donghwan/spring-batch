@@ -1,4 +1,4 @@
-package com.ahndonghwan.springbatch.common;
+package com.ahndonghwan.springbatch.common.entity;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;

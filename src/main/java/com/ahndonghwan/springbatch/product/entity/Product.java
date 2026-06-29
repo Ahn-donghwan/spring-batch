@@ -1,6 +1,6 @@
 package com.ahndonghwan.springbatch.product.entity;
 
-import com.ahndonghwan.springbatch.common.Timestamp;
+import com.ahndonghwan.springbatch.common.entity.Timestamp;
 import com.ahndonghwan.springbatch.product.enums.Status;
 import jakarta.persistence.*;
 import lombok.Builder;
