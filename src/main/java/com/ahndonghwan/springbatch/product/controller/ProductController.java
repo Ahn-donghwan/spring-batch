@@ -1,5 +1,7 @@
 package com.ahndonghwan.springbatch.product.controller;
 
+import com.ahndonghwan.springbatch.common.response.ApiResponse;
+import com.ahndonghwan.springbatch.common.response.ResponseMessage;
 import com.ahndonghwan.springbatch.product.dto.in.CreateProductReqDto;
 import com.ahndonghwan.springbatch.product.dto.out.GetProductDetailResDto;
 import com.ahndonghwan.springbatch.product.service.ProductService;
@@ -15,8 +17,8 @@ public class ProductController {
     private final ProductService productService;
 
     /**
-     * 1. 상품 생성
-     * 2. 상품 벌크 생성
+     * 1. 상품 생성 (단건)
+     * 2. 상품 생성 (벌크)
      * 3. 상품 단건 조회 by 코드
      *
      */
@@ -27,8 +29,9 @@ public class ProductController {
      * @param dto
      */
     @PostMapping
-    public void createProduct(@Valid @RequestBody CreateProductReqDto dto) {
+    public ApiResponse<Void> createProduct(@Valid @RequestBody CreateProductReqDto dto) {
         productService.createProduct(dto);
+        return new ApiResponse<>(ResponseMessage.SUCCESS_TO_CREATE_PRODUCT);
     }
 
     /**
