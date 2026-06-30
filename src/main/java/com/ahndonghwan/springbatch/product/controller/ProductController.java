@@ -40,8 +40,9 @@ public class ProductController {
      * @param dto
      */
     @PostMapping("/bulk/mock/1000")
-    public void createBulkMockProduct(@Valid @RequestBody CreateProductReqDto dto) {
+    public ApiResponse<Void> createBulkMockProduct(@Valid @RequestBody CreateProductReqDto dto) {
         productService.createBulkMockProduct(dto);
+        return new ApiResponse<>(ResponseMessage.SUCCESS_TO_CREATE_PRODUCT);
     }
 
     /**
@@ -51,7 +52,8 @@ public class ProductController {
      * @return
      */
     @GetMapping("/{code}")
-    public GetProductDetailResDto getProductDetailByCode(@PathVariable String code) {
-        return productService.getProductDetailByCode(code);
+    public ApiResponse<GetProductDetailResDto> getProductDetailByCode(@PathVariable String code) {
+        GetProductDetailResDto dto = productService.getProductDetailByCode(code);
+        return new ApiResponse<>(ResponseMessage.SUCCESS_TO_GET_PRODUCT_DETAIL, dto);
     }
 }
